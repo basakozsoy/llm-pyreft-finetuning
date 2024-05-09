@@ -1,7 +1,8 @@
 import torch, transformers, pyreft
 import pandas as pd
 
-hf_token = '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'
+# your own huggingface token here:
+hf_token = ''
 
 model_name = 'meta-llama/Llama-2-7b-chat-hf'
 model = transformers.AutoModelForCausalLM.from_pretrained(
