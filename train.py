@@ -25,7 +25,9 @@ def prompt_template(prompt):
 
 """
 # test case
-prompt = prompt_template("Who is Nicholas Renotte?")
+# add your custom prompt here:
+prompt_text = ""
+prompt = prompt_template(prompt_text)
 tokens = tokenizer.encode(prompt, return_tensors='pt').to('cuda')
 response = model.generate(tokens)
 print(tokenizer.decode(response[0]))
@@ -47,7 +49,8 @@ reft_config = pyreft.ReftConfig(
 reft_model = pyreft.get_reft_model(model, reft_config)
 reft_model.set_device('cuda')
 
-# grab data
+# if you already have a csv, grab data from csv: 
+# you can also create and use a custom csv from createcsv.py
 df = pd.read_csv('./finetune_files/knowledgeoverride.csv')
 X = df['Prompt'].values
 y = df['Response'].values

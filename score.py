@@ -24,7 +24,9 @@ def prompt_template(prompt):
 
 
 # test case
-prompt = prompt_template("Who is Nicholas Renotte?")
+# add your custom prompt here:
+prompt_text = ""
+prompt = prompt_template(prompt_text)
 tokens = tokenizer(prompt, return_tensors='pt').to('cuda')
 
 # load the trained model
